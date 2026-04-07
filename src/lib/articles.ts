@@ -1,22 +1,35 @@
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
-
 import { dataset, projectId, apiVersion } from "../sanity/env";
 
+// Sanity client
 const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // brzina; false za sveže podatke
+  useCdn: true, // false za sveže podatke
 });
 
+// Image URL builder
 const builder = imageUrlBuilder(client);
-
 export function urlFor(source: any) {
   return builder.image(source);
 }
 
-export async function getAllArticles() {
+// Tip za Article
+export interface Article {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  content?: any; // možeš dodatno tipizovati ako želiš
+  image?: any;
+  category?: string;
+  date?: string;
+}
+
+// Fetch svih članaka
+export async function getAllArticles(): Promise<Article[]> {
   const query = `*[_type == "article"] | order(date desc) {
     _id,
     title,
@@ -27,10 +40,12 @@ export async function getAllArticles() {
     category,
     date
   }`;
-  return client.fetch(query);
+  const res: Article[] = await client.fetch(query);
+  return res;
 }
 
-export async function getArticleBySlug(slug: string) {
+// Fetch članka po slug-u
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
   const query = `*[_type == "article" && slug.current == $slug][0]{
     _id,
     title,
@@ -41,5 +56,6 @@ export async function getArticleBySlug(slug: string) {
     category,
     date
   }`;
-  return client.fetch(query, { slug });
+  const res: Article | null = await client.fetch(query, { slug });
+  return res;
 }

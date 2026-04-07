@@ -1,17 +1,16 @@
-// src/app/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { getAllArticles, urlFor, Article } from "@/lib/articles";
 
 export default async function HomePage() {
-  const articles = await getAllArticles();
+  const articles: Article[] = await getAllArticles();
 
   return (
     <main>
       <h1>News Blog</h1>
 
       <div>
-        {articles.map((article, index) => (
+        {articles.map((article: Article, index: number) => (
           <article key={article._id}>
             {article.image && (
               <Image
@@ -31,7 +30,9 @@ export default async function HomePage() {
               />
             )}
             <h2>
-              <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+              <Link href={`/blog/${article.slug.current}`}>
+                {article.title}
+              </Link>
             </h2>
             <p>{article.description}</p>
           </article>
