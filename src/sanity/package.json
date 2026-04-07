@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@sanity/base": "^2.36.2",
     "@sanity/cli": "^6.3.1",
