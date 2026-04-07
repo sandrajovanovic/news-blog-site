@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "slug": "nextjs-performance-tips",
+    "title": "Next.js Performance Tips",
+    "description": "Simple ways to improve page speed and Core Web Vitals.",
+    "content": "Learn techniques to make your Next.js app load faster and improve user experience.",
+    "image": "/images/article-1.webp",
+    "category": "Performance",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 2,
+    "slug": "image-optimization-strategies",
+    "title": "Image Optimization Strategies",
+    "description": "Techniques to make images load faster on your site.",
+    "content": "Explore different formats, lazy loading, and compression methods for web images.",
+    "image": "/images/article-2.webp",
+    "category": "Images",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 3,
+    "slug": "understanding-core-web-vitals",
+    "title": "Understanding Core Web Vitals",
+    "description": "A deep dive into LCP, INP, and CLS metrics.",
+    "content": "These metrics are crucial for measuring real user experience on your site.",
+    "image": "/images/article-3.jpg",
+    "category": "Web Vitals",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 4,
+    "slug": "advanced-image-techniques",
+    "title": "Advanced Image Techniques",
+    "description": "Ways to optimize images beyond basic compression.",
+    "content": "Techniques like responsive images, WebP format, and CDN usage can boost performance.",
+    "image": "/images/article-4.png",
+    "category": "Images",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 5,
+    "slug": "image-performance-tips",
+    "title": "Image Performance Tips",
+    "description": "Improve loading speed without losing quality.",
+    "content": "Tips on resizing, caching, and serving modern image formats for faster sites.",
+    "image": "/images/article-5.jpg",
+    "category": "Images",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 6,
+    "slug": "complete-image-guide",
+    "title": "Complete Image Guide",
+    "description": "Everything you need to know about image optimization.",
+    "content": "From choosing the right format to lazy loading, learn how to handle images efficiently.",
+    "image": "/images/article-6.webp",
+    "category": "Images",
+    "date": "2026-03-14"
+  }
+]
