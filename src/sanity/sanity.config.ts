@@ -15,7 +15,9 @@ export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
-  schema: schemaTypes, // <-- array schema tipova
+  schema: {
+    types: schemaTypes,
+  },
   plugins: [
     structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
