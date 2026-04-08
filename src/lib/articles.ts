@@ -46,7 +46,7 @@ export async function getAllArticles(): Promise<Article[]> {
 
 // Fetch članka po slug-u
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
-  const query = `*[_type == "article" && slug.current == $slug][0]{
+  const query = `*[_type == "article" && slug.current == "${slug}"][0]{
     _id,
     title,
     slug,
@@ -56,6 +56,6 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     category,
     date
   }`;
-  const res: Article | null = await client.fetch(query, { slug });
+  const res: Article | null = await client.fetch(query);
   return res;
 }
