@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllArticles, urlFor, Article } from "@/lib/articles";
+import { getAllArticles, Article } from "@/lib/articles";
 
 export default async function HomePage() {
   const articles: Article[] = await getAllArticles();
@@ -14,7 +14,7 @@ export default async function HomePage() {
           <article key={article._id}>
             {article.image && (
               <Image
-                src={urlFor(article.image).width(800).height(500).url()}
+                src={article.image}
                 alt={article.title}
                 width={800}
                 height={500}

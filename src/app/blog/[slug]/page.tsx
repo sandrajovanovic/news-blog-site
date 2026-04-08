@@ -1,7 +1,7 @@
 // src/app/blog/[slug]/page.tsx
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getArticleBySlug, urlFor, Article } from "@/lib/articles";
+import { getArticleBySlug, Article } from "@/lib/articles";
 
 type Props = { params: { slug: string } };
 
@@ -29,7 +29,7 @@ export default async function ArticlePage({ params }: Props) {
         <p>{article.date}</p>
         {article.image && (
           <Image
-            src={urlFor(article.image).width(1200).height(700).url()}
+            src={article.image}
             alt={article.title}
             width={1200}
             height={700}

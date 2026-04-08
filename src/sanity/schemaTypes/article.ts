@@ -17,8 +17,7 @@ const article = defineType({
     {
       name: "image",
       title: "Image",
-      type: "image",
-      options: { hotspot: true },
+      type: "url",
     },
     { name: "category", title: "Category", type: "string" },
     { name: "date", title: "Date", type: "datetime" },

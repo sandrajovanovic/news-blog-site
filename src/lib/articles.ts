@@ -23,7 +23,7 @@ export interface Article {
   slug: { current: string };
   description: string;
   content?: any; // možeš dodatno tipizovati ako želiš
-  image?: any;
+  image?: string;
   category?: string;
   date?: string;
 }

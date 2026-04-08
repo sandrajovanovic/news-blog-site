@@ -54,13 +54,7 @@ async function importArticles() {
       content: article.content,
       category: article.category,
       date: article.date,
-      image: {
-        _type: "image",
-        asset: {
-          _type: "file",
-          url: imageUrl, // direktno Cloudinary URL
-        },
-      },
+      image: imageUrl, // direktno Cloudinary URL kao string
     };
 
     // 3️⃣ Kreiraj dokument u Sanity
