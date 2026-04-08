@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   const articles = await import("@/lib/articles").then((mod) =>
     mod.getAllArticles(),
   );
-  return articles.map((article: Article) => ({ slug: article.slug }));
+  return articles.map((article: Article) => ({ slug: article.slug.current }));
 }
 
 export default async function ArticlePage({ params }: Props) {
